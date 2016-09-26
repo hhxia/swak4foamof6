@@ -1,6 +1,6 @@
 FROM openfoamplus/of_v1606plus_centos66:latest
 MAINTAINER Bernhard F.W. Gschaider <bgschaid@hfd-research.com>
-RUN yum clean all && yum install -y epel-release
+RUN yum clean all && yum install -y epel-release sudo
 RUN yum clean all && yum install -y python-pip numpy mercurial python-devel
 RUN pip install PyFoam
 WORKDIR /opt
