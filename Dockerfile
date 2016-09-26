@@ -4,7 +4,7 @@ RUN yum clean all && yum install -y epel-release sudo
 RUN yum clean all && yum install -y python-pip numpy mercurial python-devel
 RUN pip install PyFoam
 WORKDIR /opt
-RUN hg clone http://hg.code.sf.net/p/openfoam-extend/swak4Foam -r ca9c39ba2e5e
+RUN hg clone http://hg.code.sf.net/p/openfoam-extend/swak4Foam -r compile_of4.0_v1606+
 WORKDIR /opt/swak4Foam
 RUN /bin/bash -c "source /opt/OpenFOAM/setImage_v1606+ && ./maintainanceScripts/compileRequirements.sh"
 RUN cp swakConfiguration.centos6 swakConfiguration
