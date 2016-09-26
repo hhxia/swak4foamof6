@@ -1,4 +1,4 @@
-FROM openfoamplus/of_v1606plus_centos66:19ebf385cb00
+FROM openfoamplus/of_v1606plus_centos66:latest
 MAINTAINER Bernhard F.W. Gschaider <bgschaid@hfd-research.com>
 RUN yum install -y sudo epel-release
 RUN yum install -y python-pip numpy mercurial python-devel
