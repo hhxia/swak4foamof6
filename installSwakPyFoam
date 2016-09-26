@@ -12,7 +12,7 @@ username="$USER"
 user="$(id -u)"
 home="${1:-$HOME}"
 
-imageName="hfdresearch/swak4foamandpyfoam:v1606_"
+imageName="hfdresearch/swak4foamandpyfoam:latest-v1606_"
 containerName="of_v1606_plus_swak"   
 displayVar="$DISPLAY"
 # find container already created are running:
