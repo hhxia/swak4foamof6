@@ -1,0 +1,3 @@
+export SWAK_COMPILE_GRAMMAR_OPTION="-O1"
+export SWAK_PYTHON_INCLUDE="-I/opt/rh/python27/root/usr/include/python2.7"
+export SWAK_PYTHON_LINK="-L/opt/rh/python27/root/usr/lib64 -lpython2.7"
