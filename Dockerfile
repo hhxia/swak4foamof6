@@ -12,3 +12,5 @@ RUN sed -e"s/)().fvcD2dt2(vf);/).ref().fvcD2dt2(vf);/" -e "s/)().fvcD2dt2(rho, v
 RUN sed -e "/    Field<Type>& res = tres();/c\    Field<Type>& res = tres.ref();" /opt/OpenFOAM/OpenFOAM-v1606+/src/finiteVolume/fvMatrices/fvMatrix/fvMatrixSolve.C -i.bak
 RUN /bin/bash -c "source /opt/OpenFOAM/setImage_v1606+ && ./Allwmake"
 RUN /bin/bash -c "source /opt/OpenFOAM/setImage_v1606+ && ./maintainanceScripts/copySwakFilesToSite.sh"
+RUN mkdir -p /etc/pyFoam/pyfoamrc.d
+COPY pyFoamSearchPath.cfg /etc/pyFoam/pyfoamrc.d/
