@@ -1,5 +1,6 @@
 FROM openfoamplus/of_v1606plus_centos66:latest
 MAINTAINER Bernhard F.W. Gschaider <bgschaid@hfd-research.com>
+LABEL pyFoamVersion="0.6.6" swak4FoamVersion="0.4.1" Version="0.1"
 RUN yum clean all && yum install -y epel-release
 RUN yum clean all && yum install -y python-pip python-devel numpy python-matplotlib python-pandas 
 RUN /bin/bash -c "source /opt/OpenFOAM/setImage_v1606+ && pip install PyFoam jupyter xlsxwriter xlwt xlrd mercurial"
