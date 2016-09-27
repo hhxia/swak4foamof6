@@ -31,5 +31,5 @@ docker run  -it -d --name ${containerName} --user=${user} -e USER=${username} -e
 echo "Container ${containerName} was created."
 
 echo "**************************************************"
-echo "Run the startOpenFOAM+ script to launch container"
+echo "Run the startSwakPyFoam script to launch container"
 echo "**************************************************"
