@@ -5,7 +5,7 @@ RUN yum clean all && yum install -y epel-release
 RUN yum clean all && yum install -y centos-release-SCL
 RUN yum clean all && yum install -y python27 python-devel
 # RUN yum clean all && yum install -y libpng-devel freetype-devel # Fails on DockerHub
-# RUN /bin/bash -c "source /opt/OpenFOAM/setImage_v1606+ && scl enable python27 'pip install PyFoam xlsxwriter xlwt xlrd mercurial pandas jupyter matplotlib'"
+# RUN /bin/bash -c "source /opt/OpenFOAM/setImage_v1606+ && scl enable python27 'pip install PyFoam Cython xlsxwriter xlwt xlrd mercurial pandas jupyter matplotlib'"
 RUN /bin/bash -c "source /opt/OpenFOAM/setImage_v1606+ && scl enable python27 'pip install PyFoam xlsxwriter xlwt xlrd mercurial pandas jupyter'"
 WORKDIR /opt
 RUN scl enable python27 'hg clone http://hg.code.sf.net/p/openfoam-extend/swak4Foam -r compile_of4.0_v1606+'
