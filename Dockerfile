@@ -14,7 +14,7 @@ RUN scl enable python27 'hg clone http://hg.code.sf.net/p/openfoam-extend/swak4F
 WORKDIR /opt/swak4Foam
 RUN /bin/bash -c "source /opt/OpenFOAM/setImage_v1612+ && ./maintainanceScripts/compileRequirements.sh"
 COPY swakConfiguration.centos6python27  /opt/swak4Foam/swakConfiguration
-RUN /bin/bash -c "source /opt/OpenFOAM/setImage_v1612+ && scl enable python27 './Allwmake'"
+RUN /bin/bash -c "source /opt/OpenFOAM/setImage_v1612+ && (export WM_NCOMPPROCS=1 ; scl enable python27 './Allwmake')"
 RUN /bin/bash -c "source /opt/OpenFOAM/setImage_v1612+ && ./maintainanceScripts/copySwakFilesToSite.sh"
 RUN mkdir -p /etc/pyFoam/pyfoamrc.d
 COPY pyFoamSearchPath.cfg /etc/pyFoam/pyfoamrc.d/
