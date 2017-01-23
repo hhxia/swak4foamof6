@@ -2,7 +2,7 @@
 
 Adds [swak4Foam](https://openfoamwiki.net/index.php/Contrib/swak4Foam) and [PyFoam](https://openfoamwiki.net/index.php/Contrib/PyFoam) to Standard OpenFOAM containers. Maintained by the creator of those two packages.
 
-Currently only supporting OpenFOAM v1606+
+Currently only supporting OpenFOAM v1612+
 
 [![](https://images.microbadger.com/badges/image/hfdresearch/swak4foamandpyfoam.svg)](https://microbadger.com/images/hfdresearch/swak4foamandpyfoam "Get your own image badge on microbadger.com")
 
