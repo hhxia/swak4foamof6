@@ -8,10 +8,14 @@ Currently the latest supported version is OpenFOAM v1612+
 
 ## OpenFOAM v1612+ ##
 
+Use the scripts [installSwakPyFoam](https://bitbucket.org/bgschaid/swak4foamandpyfoamdockerfile/raw/69c133458f9085248b649bc071cb41a6c8226651/installSwakPyFoam) to pull and install a container and [startSwakPyFoam](https://bitbucket.org/bgschaid/swak4foamandpyfoamdockerfile/raw/69c133458f9085248b649bc071cb41a6c8226651/startSwakPyFoam) to run it. Inside the container start another bash-shell to get access to the PyFoam-scripts
+
+
 ## OpenFOAM v1606+ ##
 
 Use the scripts [installSwakPyFoam](https://bitbucket.org/bgschaid/swak4foamandpyfoamdockerfile/src/67976d0d86c566e4fc735e0cbf994c48f78c0acf/installSwakPyFoam?at=v1606%2B&fileviewer=file-view-default) to pull and install a container and [startSwakPyFoam](https://bitbucket.org/bgschaid/swak4foamandpyfoamdockerfile/src/67976d0d86c566e4fc735e0cbf994c48f78c0acf/startSwakPyFoam?at=v1606%2B&fileviewer=file-view-default) to run it. Inside the container start another bash-shell to get access to the PyFoam-scripts
 
+## General ##
 
 **Alert:** On machines used by multiple users other users can access the HOME of the user who started the container when attaching to it. Modify installSwakPyFoam to attach to a different directory to avoid this
 
