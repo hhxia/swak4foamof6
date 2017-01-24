@@ -1,6 +1,6 @@
 # README #
 
-Adds [swak4Foam](https://openfoamwiki.net/index.php/Contrib/swak4Foam) and [PyFoam](https://openfoamwiki.net/index.php/Contrib/PyFoam) to Standard OpenFOAM containers. Maintained by the creator of those two packages.
+Adds [swak4Foam](https://openfoamwiki.net/index.php/Contrib/swak4Foam) and [PyFoam](https://openfoamwiki.net/index.php/Contrib/PyFoam) to Standard OpenFOAM docker containers. Maintained by the creator of those two packages.
 
 The sources for these docker containers are on [Bitbucket](https://bitbucket.org/bgschaid/swak4foamandpyfoamdockerfile) and the containers are on [Docker Hub](https://hub.docker.com/r/hfdresearch/swak4foamandpyfoam/)
 
@@ -9,6 +9,8 @@ Currently the latest supported version is OpenFOAM v1612+
 [![](https://images.microbadger.com/badges/image/hfdresearch/swak4foamandpyfoam.svg)](https://microbadger.com/images/hfdresearch/swak4foamandpyfoam "Get your own image badge on microbadger.com")
 
 ## Installation / Testing ##
+
+A requirement for using these containers is that you have [Docker](https://www.docker.com/) installed
 
 Create a directory for your tests
 
