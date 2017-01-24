@@ -10,7 +10,7 @@ RUN yum clean all && yum install -y python27 python-devel python27-python-pip py
 # RUN /bin/bash -c "source /opt/OpenFOAM/setImage_v1612+ && scl enable python27 'pip install PyFoam Cython xlsxwriter xlwt xlrd mercurial pandas jupyter'"
 RUN /bin/bash -c "source /opt/OpenFOAM/setImage_v1612+ && scl enable python27 'pip install PyFoam mercurial'"
 WORKDIR /opt
-RUN scl enable python27 'hg clone http://hg.code.sf.net/p/openfoam-extend/swak4Foam -r c9837ed062dc'
+RUN scl enable python27 'hg clone http://hg.code.sf.net/p/openfoam-extend/swak4Foam -r docker/v1612+'
 WORKDIR /opt/swak4Foam
 RUN /bin/bash -c "source /opt/OpenFOAM/setImage_v1612+ && ./maintainanceScripts/compileRequirements.sh"
 COPY swakConfiguration.centos6python27  /opt/swak4Foam/swakConfiguration
