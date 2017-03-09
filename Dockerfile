@@ -19,3 +19,4 @@ RUN /bin/bash -c "source /opt/OpenFOAM/setImage_v1612+ && ./maintainanceScripts/
 RUN mkdir -p /etc/pyFoam/pyfoamrc.d
 COPY pyFoamSearchPath.cfg /etc/pyFoam/pyfoamrc.d/
 COPY enablePython27.sh /etc/profile.d/
+COPY setImage_v1612+swakPyFoam /opt/swak4Foam

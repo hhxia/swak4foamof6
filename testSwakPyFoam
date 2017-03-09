@@ -1,0 +1,34 @@
+#!/bin/bash
+# this script will
+#   i) Start  OpenFOAM+ container with swak4Foam and PyFoam with name 'of_v1612_plus_swak'
+#  in the  the shell-terminal.
+#  User also need to run xhost+ from other terminal
+#  Note: Docker daemon should be running before launching script
+#  PostProcessing: User can launch paraview/paraFoam from terminal
+#  to postprocess the results
+#  Note: user can launch script in different  shell to have OpenFOAM
+#  working environment in different terminal
+
+imageName="swakpyfoam/test"
+containerName="of_v1612_plus_swak_test"
+displayVar="$DISPLAY"
+
+
+docker build -t ${imageName} .
+
+# docker start  of_v1612_plus_swak
+# echo "Execute 'bash' in the container to get a shell that knows about PyFoam"
+# docker exec -it of_v1612_plus_swak /bin/bash -rcfile /opt/OpenFOAM/setImage_v1612+
+# docker exec -it of_v1612_plus_swak /bin/bash -rcfile /opt/swak4Foam/setImage_v1612+swakPyFoam
+
+username="$USER"
+user="$(id -u)"
+home="${1:-$HOME}"
+localPasswd=$(pwd)/localPasswd
+getent passwd >$localPasswd
+
+xhost +local:${containerName}
+
+docker run  -it -d --name ${containerName} --user=${user} -e USER=${username} -e QT_X11_NO_MITSHM=1 -e DISPLAY=${displayVar} --workdir="${home}" --volume="${home}:${home}"  --volume="/etc/group:/etc/group:ro"  --volume="${localPasswd}:/etc/passwd:ro"  --volume="/etc/shadow:/etc/shadow:ro"  --volume="/etc/sudoers.d:/etc/sudoers.d:ro" -v=/tmp/.X11-unix:/tmp/.X11-unix  ${imageName}  /bin/bash --rcfile /opt/OpenFOAM/setImage_v1612+
+
+docker exec -it ${containerName} /bin/bash -rcfile /opt/swak4Foam/setImage_v1612+swakPyFoam

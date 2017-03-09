@@ -10,5 +10,6 @@
 #  working environment in different terminal
 xhost +local:of_v1612_plus_swak
 docker start  of_v1612_plus_swak
-echo "Execute 'bash' in the container to get a shell that knows about PyFoam"
-docker exec -it of_v1612_plus_swak /bin/bash -rcfile /opt/OpenFOAM/setImage_v1612+
+# echo "Execute 'bash' in the container to get a shell that knows about PyFoam"
+# docker exec -it of_v1612_plus_swak /bin/bash -rcfile /opt/OpenFOAM/setImage_v1612+
+docker exec -it of_v1612_plus_swak /bin/bash -rcfile /opt/swak4Foam/setImage_v1612+swakPyFoam
