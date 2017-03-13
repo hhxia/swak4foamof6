@@ -17,15 +17,15 @@ Create a directory for your tests
     mkdir swakTest
     cd swakTest
 
-Now download the files `installSwakPyFoam` and `startSwakPyFoam` from the approptiate links below and copy them to `swakTest`. Then install the container with 
-    
+Now download the files `installSwakPyFoam` and `startSwakPyFoam` from the approptiate links below and copy them to `swakTest`. Then install the container with
+
     ./installSwakPyFoam
 
 and start the container with
 
     ./startSwakPyFoam
 
-Now the shell prompt is inside the container. Start a *new* shell with 
+Now the shell prompt is inside the container. Start a *new* shell with
 
     bash
 
@@ -50,8 +50,7 @@ To get a concrete container download the scripts below
 
 ### OpenFOAM v1612+ ###
 
-Use the scripts [installSwakPyFoam](https://bitbucket.org/bgschaid/swak4foamandpyfoamdockerfile/raw/69c133458f9085248b649bc071cb41a6c8226651/installSwakPyFoam) to pull and install a container and [startSwakPyFoam](https://bitbucket.org/bgschaid/swak4foamandpyfoamdockerfile/raw/69c133458f9085248b649bc071cb41a6c8226651/startSwakPyFoam) to run it. Inside the container start another bash-shell to get access to the PyFoam-scripts
-
+Use the scripts [installSwakPyFoam](https://bitbucket.org/bgschaid/swak4foamandpyfoamdockerfile/src/89fd00f6a6e9bf12aed73a4de8c303852efacc7b/installSwakPyFoam) to pull and install a container and [startSwakPyFoam](https://bitbucket.org/bgschaid/swak4foamandpyfoamdockerfile/src/89fd00f6a6e9bf12aed73a4de8c303852efacc7b/startSwakPyFoam) to run it.
 
 ### OpenFOAM v1606+ ###
 
