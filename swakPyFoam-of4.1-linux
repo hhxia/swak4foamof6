@@ -68,7 +68,7 @@ USAGE
     exit 1
 }
 
-DOCKER_IMAGE='hfdresearch/swak4foamandpyfoam:latest-v4.1_'
+DOCKER_IMAGE='hfdresearch/swak4foamandpyfoam:latest-v4.1'
 MOUNT_DIR=$(pwd)
 
 while [ "$#" -gt 0 ]
