@@ -4,7 +4,7 @@ LABEL pyFoamVersion="0.6.6" swak4FoamVersion="0.4.1" pythonVersion="2.7" Version
 USER root
 RUN whoami
 RUN apt-get update
-RUN apt-get --yes install python-pip mercurial python-numpy
+RUN apt-get --yes install python-pip mercurial python-numpy ipython python-ipdb python-pandas python-xlsxwriter python-xlwt python-xlrd
 RUN pip install PyFoam
 WORKDIR /opt
 RUN hg clone http://hg.code.sf.net/p/openfoam-extend/swak4Foam -r docker/v1612+
@@ -20,5 +20,3 @@ RUN mkdir /opt/site/4.1/platforms/linux64GccDPInt32Opt/lib
 RUN chown openfoam:openfoam /opt/site/4.1/platforms/linux64GccDPInt32Opt/*
 USER openfoam
 RUN bash -c "source /opt/openfoam4/etc/bashrc &&  ./maintainanceScripts/copySwakFilesToSite.sh"
-USER root
-RUN apt-get --yes install ipython ipython-notebook python-ipdb python-pandas python-xlsxwriter python-xlwt python-xlrd
