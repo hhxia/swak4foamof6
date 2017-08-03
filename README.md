@@ -48,6 +48,11 @@ This should start a run and a number of windows with updating plots should open
 
 To get a concrete container download the scripts below
 
+### OpenFOAM v1706+ ###
+
+Use the scripts [installSwakPyFoam](https://bitbucket.org/bgschaid/swak4foamandpyfoamdockerfile/raw/7a1f96e605d216e920a865384524cb39dbd1a0b2/installSwakPyFoam) to pull and install a container and [startSwakPyFoam](https://bitbucket.org/bgschaid/swak4foamandpyfoamdockerfile/raw/7a1f96e605d216e920a865384524cb39dbd1a0b2/startSwakPyFoam) to run it. Inside the container start another bash-shell to get access to the PyFoam-scripts
+
+
 ### OpenFOAM v1612+ ###
 
 Use the scripts [installSwakPyFoam](https://bitbucket.org/bgschaid/swak4foamandpyfoamdockerfile/raw/69c133458f9085248b649bc071cb41a6c8226651/installSwakPyFoam) to pull and install a container and [startSwakPyFoam](https://bitbucket.org/bgschaid/swak4foamandpyfoamdockerfile/raw/69c133458f9085248b649bc071cb41a6c8226651/startSwakPyFoam) to run it. Inside the container start another bash-shell to get access to the PyFoam-scripts
