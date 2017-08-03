@@ -56,6 +56,22 @@ Use the scripts [installSwakPyFoam](https://bitbucket.org/bgschaid/swak4foamandp
 
 Use the scripts [installSwakPyFoam](https://bitbucket.org/bgschaid/swak4foamandpyfoamdockerfile/src/67976d0d86c566e4fc735e0cbf994c48f78c0acf/installSwakPyFoam?at=v1606%2B&fileviewer=file-view-default) to pull and install a container and [startSwakPyFoam](https://bitbucket.org/bgschaid/swak4foamandpyfoamdockerfile/src/67976d0d86c566e4fc735e0cbf994c48f78c0acf/startSwakPyFoam?at=v1606%2B&fileviewer=file-view-default) to run it. Inside the container start another bash-shell to get access to the PyFoam-scripts
 
+### OpenFOAM 4.1 ###
+
+The script to pull and start a container
+is
+[swakPyFoam-of4.1-linux](https://bitbucket.org/bgschaid/swak4foamandpyfoamdockerfile/raw/0e9ee387c001d3f87561b5973bb57a1169cde18c/swakPyFoam-of4.1-linux)
+
+It is based on [this container](https://hub.docker.com/r/openfoam/openfoam4-paraview50/)
+ 
+### OpenFOAM 5.0 ###
+
+The script to pull and start a container
+is
+[swakPyFoam-of5.0-linux](https://bitbucket.org/bgschaid/swak4foamandpyfoamdockerfile/raw/72ea4ab8d3c950fd1cdfa1adc98e3e66666366cb/swakPyFoam-of5.0-linux)
+
+It is based on [this container](https://hub.docker.com/r/openfoam/openfoam5-paraview54/)
+ 
 ## General ##
 
 **Alert:** On machines used by multiple users other users can access the HOME of the user who started the container when attaching to it. Modify installSwakPyFoam to attach to a different directory to avoid this
