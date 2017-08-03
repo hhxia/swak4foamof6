@@ -1,6 +1,6 @@
 FROM openfoamplus/of_v1706_centos73:latest
 MAINTAINER Bernhard F.W. Gschaider <bgschaid@hfd-research.com>
-LABEL pyFoamVersion="0.6.8" swak4FoamVersion="0.4.2-dev" pythonVersion="2.7" Version="0.3"
+LABEL pyFoamVersion="0.6.8.1" swak4FoamVersion="0.4.2-dev" pythonVersion="2.7" Version="0.4"
 RUN yum clean all && yum install -y epel-release
 RUN yum clean all && yum install -y python2-pip mercurial numpy
 # RUN yum clean all && yum install -y centos-release-SCL
