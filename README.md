@@ -12,8 +12,8 @@ the containers are
 on
 [Docker Hub](https://hub.docker.com/r/hfdresearch/swak4foamandpyfoam/)
 
-Currently the latest supported version is OpenFOAM v1612+ and OpenFOAM
-4.1
+Currently the latest supported version is OpenFOAM v1706+ and OpenFOAM
+5.0
 
 [![](https://images.microbadger.com/badges/image/hfdresearch/swak4foamandpyfoam.svg)](https://microbadger.com/images/hfdresearch/swak4foamandpyfoam
 "Get your own image badge on microbadger.com")
@@ -63,6 +63,14 @@ To get a concrete container download the scripts below
 The scripts are adaptations from the scripts supplied for the base
 containers. For details look for the documentation there
 
+### OpenFOAM v1706+ ###
+
+Use the scripts
+[installSwakPyFoam](https://bitbucket.org/bgschaid/swak4foamandpyfoamdockerfile/raw/7a1f96e605d216e920a865384524cb39dbd1a0b2/installSwakPyFoam)
+to pull and install a container and
+[startSwakPyFoam](https://bitbucket.org/bgschaid/swak4foamandpyfoamdockerfile/raw/7a1f96e605d216e920a865384524cb39dbd1a0b2/startSwakPyFoam)
+to run it.
+
 ### OpenFOAM v1612+ ###
 
 Use the
@@ -87,6 +95,13 @@ run it. Inside the container start another bash-shell to get access to
 the PyFoam-scripts
 
 It is based on [this container](https://hub.docker.com/r/openfoamplus/of_v1606plus_centos66/)
+
+### OpenFOAM 5.0 ###
+
+The script to pull and start a container is
+[swakPyFoam-of5.0-linux](https://bitbucket.org/bgschaid/swak4foamandpyfoamdockerfile/raw/72ea4ab8d3c950fd1cdfa1adc98e3e66666366cb/swakPyFoam-of5.0-linux)
+
+It is based on [this container](https://hub.docker.com/r/openfoam/openfoam5-paraview54/)
 
 ### OpenFOAM 4.1 ###
 
