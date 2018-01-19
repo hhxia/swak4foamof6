@@ -8,8 +8,8 @@
 #  to postprocess the results
 #  Note: user can launch script in different  shell to have OpenFOAM
 #  working environment in different terminal
-xhost +local:of_v1706_plus_swak
-docker start  of_v1706_plus_swak
+xhost +local:of_v1712_plus_swak
+docker start  of_v1712_plus_swak
 # echo "Execute 'bash' in the container to get a shell that knows about PyFoam"
-# docker exec -it of_v1706_plus_swak /bin/bash -rcfile /opt/OpenFOAM/setImage_v1706+
-docker exec -it of_v1706_plus_swak /bin/bash -rcfile /opt/swak4Foam/setImage_v1706+swakPyFoam
+# docker exec -it of_v1712_plus_swak /bin/bash -rcfile /opt/OpenFOAM/setImage_v1712+
+docker exec -it of_v1712_plus_swak /bin/bash -rcfile /opt/swak4Foam/setImage_v1712+swakPyFoam

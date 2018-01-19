@@ -1,7 +1,7 @@
 #!/bin/sh
 # this script will
 #   i) Pull OpenFOAM+ with swak4Foam and PyFoam from docker hub if it does not exist in local environment
-#  ii) Create  container with name of_v1706_plus_swak
+#  ii) Create  container with name of_v1712_plus_swak
 # iii) PostProcessing Tool : paraview/paraFoam
 #  iv) Image comes with already installed utility:
 #      Midnight Commander, gnuplot
@@ -12,8 +12,8 @@ username="$USER"
 user="$(id -u)"
 home="${1:-$HOME}"
 
-imageName="hfdresearch/swak4foamandpyfoam:latest-v1706_"
-containerName="of_v1706_plus_swak"
+imageName="hfdresearch/swak4foamandpyfoam:latest-v1712_"
+containerName="of_v1712_plus_swak"
 displayVar="$DISPLAY"
 # find container already created are running:
 echo "Following Docker containers are present on your system:"
@@ -39,7 +39,7 @@ docker run  -it -d --name ${containerName} --user=${user} \
        --volume="/etc/shadow:/etc/shadow:ro"  \
        --volume="/etc/sudoers.d:/etc/sudoers.d:ro" \
        -v=/tmp/.X11-unix:/tmp/.X11-unix  ${imageName}  \
-       /bin/bash --rcfile /opt/OpenFOAM/setImage_v1706+
+       /bin/bash --rcfile /opt/OpenFOAM/setImage_v1712+
 
 echo "Container ${containerName} was created."
 
