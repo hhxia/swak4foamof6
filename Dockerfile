@@ -1,13 +1,13 @@
 FROM openfoam/openfoam5-paraview54:5.0
 MAINTAINER Bernhard F.W. Gschaider <bgschaid@hfd-research.com>
-LABEL pyFoamVersion="0.6.8" swak4FoamVersion="0.4.2-dev" pythonVersion="2.7" Version="0.4"
+LABEL pyFoamVersion="0.6.9" swak4FoamVersion="0.4.2-dev" pythonVersion="2.7" Version="0.5"
 USER root
 RUN whoami
 RUN apt-get update
 RUN apt-get --yes install python-pip mercurial python-numpy ipython python-ipdb python-pandas python-xlsxwriter python-xlwt python-xlrd
 RUN pip install PyFoam
 WORKDIR /opt
-RUN hg clone http://hg.code.sf.net/p/openfoam-extend/swak4Foam -r compile_of5.0
+RUN hg clone http://hg.code.sf.net/p/openfoam-extend/swak4Foam -r develop
 RUN chown -R openfoam:openfoam swak4Foam
 USER openfoam
 WORKDIR /opt/swak4Foam
