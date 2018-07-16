@@ -10,7 +10,7 @@
 #  working environment in different terminal
 
 imageName="swakpyfoam/test"
-containerName="of_v1612_plus_swak_test"
+containerName="of_v1806_plus_swak_test"
 displayVar="$DISPLAY"
 
 
@@ -29,6 +29,6 @@ getent passwd >$localPasswd
 
 xhost +local:${containerName}
 
-docker run  -it -d --name ${containerName} --user=${user} -e USER=${username} -e QT_X11_NO_MITSHM=1 -e DISPLAY=${displayVar} --workdir="${home}" --volume="${home}:${home}"  --volume="/etc/group:/etc/group:ro"  --volume="${localPasswd}:/etc/passwd:ro"  --volume="/etc/shadow:/etc/shadow:ro"  --volume="/etc/sudoers.d:/etc/sudoers.d:ro" -v=/tmp/.X11-unix:/tmp/.X11-unix  ${imageName}  /bin/bash --rcfile /opt/OpenFOAM/setImage_v1612+
+docker run  -it -d --name ${containerName} --user=${user} -e USER=${username} -e QT_X11_NO_MITSHM=1 -e DISPLAY=${displayVar} --workdir="${home}" --volume="${home}:${home}"  --volume="/etc/group:/etc/group:ro"  --volume="${localPasswd}:/etc/passwd:ro"  --volume="/etc/shadow:/etc/shadow:ro"  --volume="/etc/sudoers.d:/etc/sudoers.d:ro" -v=/tmp/.X11-unix:/tmp/.X11-unix  ${imageName}  /bin/bash --rcfile /opt/OpenFOAM/setImage_v1806+
 
-docker exec -it ${containerName} /bin/bash -rcfile /opt/swak4Foam/setImage_v1612+swakPyFoam
+docker exec -it ${containerName} /bin/bash -rcfile /opt/swak4Foam/setImage_v1806+swakPyFoam
