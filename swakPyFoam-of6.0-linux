@@ -21,15 +21,15 @@
 #     along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
 #
 # Script
-#     openfoam5-linux
+#     openfoam6-linux
 #
 # Description
-#     Run script for an OpenFOAM 4 Docker image at:
+#     Run script for an OpenFOAM 6 Docker image at:
 #     https://hub.docker.com/r/openfoam
 #
 #------------------------------------------------------------------------------
 Script=${0##*/}
-VER=5.0
+VER=6
 
 usage () {
     exec 1>&2
@@ -66,7 +66,7 @@ or
     ${Script} -d ${HOME}/OpenFOAM/${USER}-${VER}
 
 Further Information:
-http://openfoam.org/download/5-0-linux
+http://openfoam.org/download/6-linux
 
 Note:
 The container user name appears as "openfoam" but it is just an alias.
@@ -75,7 +75,7 @@ USAGE
     exit 1
 }
 
-DOCKER_IMAGE='hfdresearch/swak4foamandpyfoam:latest-v5.0'
+DOCKER_IMAGE='hfdresearch/swak4foamandpyfoam:latest-v6.0'
 MOUNT_DIR=$(pwd)
 CUSTOM_XAUTH=""
 DOCKER_OPTIONS=""
@@ -112,7 +112,7 @@ done
     MOUNT_DIR=$(cd $MOUNT_DIR && pwd -P) || \
     usage "No directory exists: $MOUNT_DIR"
 
-[ "$MOUNT_DIR" = "$(cd $HOME && pwd -P)" ] && \
+[ "$MOUNT_DIR" = "$(cd "$HOME" && pwd -P)" ] && \
     usage "Mount directory cannot be the user's home directory" \
           "Make a subdirectory and run from there, e.g." \
           "    mkdir -p ${HOME}/OpenFOAM/$(whoami)-${VER}" \
@@ -124,17 +124,17 @@ then
     touch "${XAUTH_PATH}"
 
     # Generate a custom X-authority file that allows any hostname
-    xauth nlist $DISPLAY |  sed -e 's/^..../ffff/' | \
-        xauth -f $XAUTH_PATH nmerge -
+    xauth nlist "$DISPLAY" |  sed -e 's/^..../ffff/' | \
+        xauth -f "$XAUTH_PATH" nmerge -
 
     DOCKER_OPTIONS="-e XAUTHORITY=$XAUTH_PATH
                     -v $XAUTH_PATH:$XAUTH_PATH
                     --net=host"
 fi
 
-
 USER_ID=$(id -u 2> /dev/null)
-[ -n "$USER_ID" ] && GROUP_ID=$(id -g) || usage "Cannot determine current user ID"
+[ -n "$USER_ID" ] || usage "Cannot determine current user ID"
+GROUP_ID=$(id -g)
 
 HOME_DIR='/home/openfoam'
 

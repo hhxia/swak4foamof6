@@ -10,7 +10,7 @@
 #  working environment in different terminal
 
 imageName="swakpyfoam/test"
-containerName="of_v1612_plus_swak_test"
+containerName="of_6_swak_test"
 displayVar="$DISPLAY"
 
 
