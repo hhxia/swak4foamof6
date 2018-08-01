@@ -19,5 +19,8 @@ USER root
 RUN mkdir -p /opt/site/6/platforms/linux64GccDPInt32Opt/bin
 RUN mkdir /opt/site/6/platforms/linux64GccDPInt32Opt/lib
 RUN chown openfoam:openfoam /opt/site/6/platforms/linux64GccDPInt32Opt/*
+RUN apt-get --yes install tmux
 USER openfoam
 RUN bash -c "source /opt/openfoam6/etc/bashrc &&  ./maintainanceScripts/copySwakFilesToSite.sh"
+WORKDIR /home/openfoam
+ENTRYPOINT /usr/bin/tmux set-option -gs default-command "/bin/sh -c /entry.sh" \; new-session -A -s main
