@@ -13,7 +13,7 @@ on
 [Docker Hub](https://hub.docker.com/r/hfdresearch/swak4foamandpyfoam/)
 
 Currently the latest supported version is OpenFOAM v1806+ and OpenFOAM
-5.0
+6.0
 
 [![](https://images.microbadger.com/badges/image/hfdresearch/swak4foamandpyfoam.svg)](https://microbadger.com/images/hfdresearch/swak4foamandpyfoam
 "Get your own image badge on microbadger.com")
@@ -111,6 +111,13 @@ run it. Inside the container start another bash-shell to get access to
 the PyFoam-scripts
 
 It is based on [this container](https://hub.docker.com/r/openfoamplus/of_v1606plus_centos66/)
+
+### OpenFOAM 6.0 ###
+
+The script to pull and start a container is
+[swakPyFoam-of6.0-linux](https://bitbucket.org/bgschaid/swak4foamandpyfoamdockerfile/raw/94a22da4f1a60cb485cbd20951392591cceee063/swakPyFoam-of6.0-linux)
+
+It is based on [this container](https://hub.docker.com/r/openfoam/openfoam6-paraview54/)
 
 ### OpenFOAM 5.0 ###
 
