@@ -1,6 +1,6 @@
 FROM openfoam/openfoam5-paraview54:5.0
 MAINTAINER Bernhard F.W. Gschaider <bgschaid@hfd-research.com>
-LABEL pyFoamVersion="0.6.9" swak4FoamVersion="0.4.2-dev" pythonVersion="2.7" Version="0.5"
+LABEL pyFoamVersion="0.6.10" swak4FoamVersion="0.4.2-dev" pythonVersion="2.7" Version="0.6"
 USER root
 RUN whoami
 RUN apt-get update
