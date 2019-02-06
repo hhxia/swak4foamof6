@@ -12,7 +12,7 @@ the containers are
 on
 [Docker Hub](https://hub.docker.com/r/hfdresearch/swak4foamandpyfoam/)
 
-Currently the latest supported version is OpenFOAM v1806+ and OpenFOAM
+Currently the latest supported version is OpenFOAM v1812+ and OpenFOAM
 6.0
 
 [![](https://images.microbadger.com/badges/image/hfdresearch/swak4foamandpyfoam.svg)](https://microbadger.com/images/hfdresearch/swak4foamandpyfoam
@@ -62,6 +62,14 @@ To get a concrete container download the scripts below
 
 The scripts are adaptations from the scripts supplied for the base
 containers. For details look for the documentation there
+
+### OpenFOAM v1812 ###
+
+Use the scripts
+[installSwakPyFoam](https://bitbucket.org/bgschaid/swak4foamandpyfoamdockerfile/raw/1eadb1e6e3492063230817d961ce9d52c9707f7a/installSwakPyFoam)
+to pull and install a container and
+[startSwakPyFoam](https://bitbucket.org/bgschaid/swak4foamandpyfoamdockerfile/raw/1eadb1e6e3492063230817d961ce9d52c9707f7a/startSwakPyFoam)
+to run it.
 
 ### OpenFOAM v1806+ ###
 
