@@ -6,7 +6,7 @@ RUN yum clean all && yum install -y python2-pip mercurial numpy
 RUN /bin/bash -c "source /opt/OpenFOAM/setImage_v1906.sh && pip install PyFoam==0.6.10"
 RUN yum clean all && yum install -y python36-devel
 WORKDIR /opt
-RUN hg clone http://hg.code.sf.net/p/openfoam-extend/swak4Foam -r v0.4.2
+RUN hg clone http://hg.code.sf.net/p/openfoam-extend/swak4Foam -r compile/v1906
 WORKDIR /opt/swak4Foam
 RUN yum clean all && yum install -y readline-devel unzip
 RUN /bin/bash -c "source /opt/OpenFOAM/setImage_v1906.sh && ./maintainanceScripts/compileRequirements.sh"
