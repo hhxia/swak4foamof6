@@ -15,10 +15,13 @@ home="${1:-$HOME}"
 imageName="hfdresearch/swak4foamandpyfoam:latest-v1906"
 containerName="of_v1906_plus_swak"
 displayVar="$DISPLAY"
-# find container already created are running:
+
+# List container name :
+echo "*******************************************************"
 echo "Following Docker containers are present on your system:"
-echo "**************************************** "
+echo "*******************************************************"
 docker ps -a
+
 
 localPasswd=$(pwd)/localPasswd
 getent passwd >$localPasswd
@@ -28,19 +31,19 @@ echo "**************************************** "
 echo "			"
 echo "Creating Docker OpenFOAM+ with swak4Foam and PyFoam container ${containerName}"
 
-docker run  -it -d --name ${containerName} --user=${user} \
-       -e USER=${username} \
-       -e QT_X11_NO_MITSHM=1 \
-       -e DISPLAY=${displayVar} \
-       -e QT_XKB_CONFIG_ROOT=/usr/share/X11/xkb                \
-       --workdir="${home}" \
-       --volume="${home}:${home}"  \
-       --volume="/etc/group:/etc/group:ro"  \
-       --volume="${localPasswd}:/etc/passwd:ro"  \
-       --volume="/etc/shadow:/etc/shadow:ro"  \
-       --volume="/etc/sudoers.d:/etc/sudoers.d:ro" \
-       -v=/tmp/.X11-unix:/tmp/.X11-unix  ${imageName}  \
-       /bin/bash --rcfile /opt/OpenFOAM/setImage_v1906+
+docker run  -it -d --name ${containerName} --user=${user}    \
+    -e USER=${username}                                      \
+    -e QT_X11_NO_MITSHM=1                                    \
+    -e DISPLAY=${displayVar}                                 \
+    -e QT_XKB_CONFIG_ROOT=/usr/share/X11/xkb                 \
+    --workdir="${home}"                                      \
+    --volume="${home}:${home}"                               \
+    --volume="/etc/group:/etc/group:ro"                      \
+    --volume="${localPasswd}:/etc/passwd:ro"                 \
+    --volume="/etc/shadow:/etc/shadow:ro"                    \
+    --volume="/etc/sudoers.d:/etc/sudoers.d:ro"              \
+    -v=/tmp/.X11-unix:/tmp/.X11-unix  ${imageName}           \
+    /bin/bash --rcfile /opt/OpenFOAM/setImage_v1906.sh
 
 echo "Container ${containerName} was created."
 
