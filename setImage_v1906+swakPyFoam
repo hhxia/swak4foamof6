@@ -1,0 +1,3 @@
+#!/bin/bash
+source /opt/OpenFOAM/setImage_v1906.sh
+source /etc/bashrc
